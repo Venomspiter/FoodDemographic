@@ -31,7 +31,7 @@ def get_food_options():
 
 @app.route("/")
 def render_main():
-    return get_state_options()
+    return get_food_options()
 
 def food_fact1(food):
     with open('food.json') as food_data:
