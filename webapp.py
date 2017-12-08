@@ -2,17 +2,17 @@ from flask import Flask, render_template, request, Markup, flash, Markup
 import os 
 import json
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
-@app.route("/app1")
+@app.route("/p1")
 def render_fact1():
     food = request.args['options']
     return render_template('page1.html', cookFact =  food_fact1(food), option = get_food_options())
 
-@app.route("/app2")
+@app.route("/p2")
 def render_fact2():
     food = request.args['options']
     return render_template('page2.html', cookFact =  food_fact2(food), option = get_food_options())
 
-@app.route("/app3")
+@app.route("/p3")
 def render_fact3():
     food = request.args['options']
     return render_template('page3.html', cookFact =  food_fact3(food), option = get_food_options())
