@@ -1,30 +1,28 @@
-<DOCTYPE html>
- <html>
- <head>
- <title>Food + JSON</title></head>
- <link rel = "stylesheet" href= "mystyle.css">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
- <body>
-   <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class "icon-bar"></span>
-		<span class "icon-bar"></span>
-		<span class "icon-bar"></span>
-		</button>
-		  <a class="navbar-brand" href="#">My Website</a>
-        </div>
-		<div class = "collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li {% if active_Page == "home" %} class = "active" {% endif %}><a href=".">Home</a></li>
-	    <li {% if active_Page == "page1" %} class = "active" {% endif %}><a href="p1">Page 1</a></li>
-	    <li {% if active_Page == "page2" %} class = "active" {% endif %}><a href="p2">Page 2</a></li>
- 	    <li {% if active_Page == "page3" %} class = "active" {% endif %}><a href="p3">Page 3</a></li>
-          </ul>
-      </div>
-    </nav>
-   <h1>Data Importance</h1>
-   <p>This set of data can be extremely useful when researching weather patterns in the United States. The data is layed out in a way where when milling through it with Python it can be easily read and displayed in sets. </p>
- </body>
- </html>
+{% extends 'layout.html' %}
+{% set active_page = 'home' %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+  <h3>Food and the Like</h3>
+  <p> Data about what you eat and what's in what you eat</p>
+   <h2>Summary</h2>
+   <p class = "solid">Upon researching the JSON file on food their seem to be several numbers and statistics being calculated and inputted every day. The data is organized by the United States Department of Agriculture and is meant to serve as a database that holds facts about the composition of foods and the percentages of vitamins, minerals and other important nutritional data. It is organized alphabetically by the category of food in this case it starts with "butter". The data for each food is stored in a "data" dictionary which holds "Major minerals", "Vitamins", "Fats", and other components of that sort while also having data like "household weight", a description or a "Data Bank Number". Their are mathematical errors that can of course plague the data set due to human error such as what was the widely thought fact that spinach has an extremely large amount of iron and should be eaten if necessary, but in truth their was human error involved and the misplacement of a zero caused us to think the iron in spinach was tenfold what it truly is. The database is meant to be traveled through by searching for something by name, number, or contents and can be organized as such with relative ease.</p>
+     <img src="butter.jpg" alt="Picture 1"  style="width:304px;height:228px;">
+      <img src="turkey.jpg" alt="Picture 2"  style="width:304px;height:228px;">
+	  <br>
+       <img src="caprese.png" alt="Picture 3"  style="width:304px;height:228px;">
+	   <p>Example of Data:</p>
+	<p>"Category": "BUTTER", <br>
+    "Data": {<br>
+      "Niacin": 0.042, <br>
+      "Major Minerals": {<br>
+        "Copper": 0.0, <br>
+        "Iron": 0.02, <br>
+        "Sodium": 576, <br>
+        "Potassium": 24, <br>
+        "Calcium": 24, <br>
+        "Magnesium": 2, <br>
+        "Zinc": 0.09, <br>
+        "Phosphorus": 24<br>
+      }, </p>
+<center>
+{% endblock %}
