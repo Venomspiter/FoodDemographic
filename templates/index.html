@@ -18,9 +18,10 @@
 		<div class = "collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="page1.html">Page 1</a></li>
-            <li><a href="page2.html">Page 2</a></li>
-	    <li><a href="page3.html">Page 3</a></li>
+            <li {% if active_Page == "home" %} class = "active" {% endif %}><a href=".">Home</a></li>
+	    <li {% if active_Page == "page1" %} class = "active" {% endif %}><a href="p1">Page 1</a></li>
+	    <li {% if active_Page == "page2" %} class = "active" {% endif %}><a href="p2">Page 2</a></li>
+ 	    <li {% if active_Page == "page3" %} class = "active" {% endif %}><a href="p3">Page 3</a></li>
           </ul>
       </div>
     </nav>
