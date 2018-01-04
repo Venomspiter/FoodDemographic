@@ -4,27 +4,16 @@ import json
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
 @app.route("/p1")
 def render_fact1():
-    try:   
 	    food = request.args['options']
 	    return render_template('page1.html', cookFact =  food_fact(food), option = get_food_options())
-	except:
-	   return render_template('page1.html', option = get_food_options())
-
 @app.route("/p2")
-def render_fact2():
-    try:   
+def render_fact2():  
 	    food = request.args['options']
 	    return render_template('page2.html', cookFact =  food_fact2(food), option = get_food_options())
-	except:
-	   return render_template('page2.html', option = get_food_options())
 @app.route("/p3")
-def render_fact3():
-    try:   
+def render_fact3():  
 	    food = request.args['options']
 	    return render_template('page3.html', cookFact =  food_fact3(food), option = get_food_options())
-	except:
-	   return render_template('page3.html', option = get_food_options())
-
 def get_food_options():
         with open('food.json') as food_data:
             foodList = json.load(food_data)
@@ -67,5 +56,4 @@ def food_fact3(food):
             Cholesterol = c['Cholesterol']
     return Cholesterol
 if __name__== '__main__':
-    main()
     app.run(debug=False, port=54321)
