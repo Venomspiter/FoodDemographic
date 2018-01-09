@@ -55,11 +55,11 @@ def food_fact1(food):
             if food == c['Description']:
                 total = total + c['Data']['Major Minerals']['Sodium']
         if total <= 250:
-            return food + " has a little salt in it. Nearly " + str(total)
+            return food + " has a little salt in it. Nearly " + str(total) + " salt"
         if total >= 250 and total <= 750:
-            return food + " has about medium salt. Around: " + str(total) + " in it."
+            return food + " has about medium salt. Around: " + str(total) + " units of salt in it."
         else:
-            return food + " has a heck of a lot of salt in it. about " + str(total) +"."
+            return food + " has a heck of a lot of salt in it. about " + str(total) +" units."
 
 def food_fact2(food):
     with open('food.json') as food_data:
@@ -68,7 +68,7 @@ def food_fact2(food):
     for c in foodlist:
         if food == c['Description']:
             fat = c['Data']['Fat']['Saturated Fat']
-    return food + " has " + str(fat) + "in it"
+    return food + " has " + str(fat) + " fat in it"
 
 def food_fact3(food):
     with open('food.json') as food_data:
@@ -77,6 +77,6 @@ def food_fact3(food):
     for c in foodlist:
         if food == c['Description']:
             Cholesterol = c['Data']['Cholesterol']
-    return food + " has " + str(Cholesterol) + " in it"
+    return food + " has " + str(Cholesterol) + " cholestorol."
 if __name__== '__main__':
     app.run(debug=True, port=54321)
